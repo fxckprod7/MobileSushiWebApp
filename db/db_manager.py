@@ -1,4 +1,4 @@
-import os
+import os, asyncio
 
 import aiosqlite
 
@@ -25,3 +25,11 @@ class Database:
             
             return result
     
+    
+async def main():
+    db = Database(["database.db"])
+    await db.connection_check()
+    print(await db.menu_item("hosomaki_roll"))
+    
+if __name__ == "__main__":
+    asyncio.run(main())
