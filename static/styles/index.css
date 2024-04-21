@@ -1,0 +1,154 @@
+.container{
+    width: 353px;
+    height: 777px;
+
+    margin-top: 54px;
+    margin-bottom: 21px;
+
+}
+
+.status-bar-box{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#logo{
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 393px;
+    height: 350px;
+
+    z-index: 0;
+}
+
+.deals{
+    position: absolute;
+
+    width: 353px;
+    height: 326px;
+
+    z-index: 0;
+
+    margin-top: 338px;
+
+}
+
+#deals-title{
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 0;
+
+    font-size: 28px;
+}
+
+.deal-items{
+    position: absolute;
+
+    display: flex;
+    justify-content: space-between;
+
+    top: 0;
+    left: 0;
+
+    width: 312px;
+    height: 163px;
+
+    margin-top: 58px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    z-index: 0;
+
+}
+
+#deal-item{
+    width: 140px;
+    height: 163px;
+
+    filter: drop-shadow(2px 4px 7px rgba(0, 0, 0, 0.25));
+
+    border: 1px hidden #000;
+    border-radius: 20px;
+
+    background: radial-gradient(#636363,#484848 );
+    transition: 0.4s;
+}
+
+#deal-item:hover{
+    filter: drop-shadow(2px 4px 7px rgba(0, 0, 0, 0.8));
+}
+
+#deal-img{
+    width: 98px;
+    height: 87px;
+
+    margin: 17px 21px 0px 21px;
+
+    filter: drop-shadow(2px 4px 7px rgba(0, 0, 0, 0.3));
+}
+
+#deal-item-title{
+    width: 96px;
+    height: 16px;
+
+    font-size: 15px;
+    color: white;
+
+    margin: 0px 21px 0px 21px;
+}
+
+#deal-item-price{
+    width: 97px;
+    height: 29px;
+
+    font-size: 12px;
+    color: white;
+
+    margin: 0px 21px 0px 21px;
+}
+
+#deals-menu-btn{
+    position: absolute;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 50px;
+
+    border: 1.5px solid #FF585D;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    transition: 0.3s;
+}
+
+#btn-text{
+    color: #FF585D;
+    font-size: 17px;
+    font-weight: 500;
+
+    background-color: white;
+    transition: 0.3s;
+}
+
+#deals-menu-btn-cover:hover *{
+    background-color: #FF585D;
+    color: white;
+}
+
+#deals-menu-btn:hover{
+    filter: drop-shadow(2px 4px 7px rgba(0, 0, 0, 0.4));
+}
+

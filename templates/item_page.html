@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/item_page.css') }}">
+{% endblock %}
+
+{% block content %}
+    {% set item_img_url = "img/item/" + menu_item[4] + ".png" %}
+    <img src="{{ url_for('static', filename=item_img_url) }}" alt="" class="item-img">
+    <div class="item-info-container">
+        <div class="item-rating">
+            <img src="{{ url_for('static', filename='img/item/star_item.png') }}" alt="" class="item-rating-star">
+            <span class="item-rating-number">{{ menu_item[3]|string|replace(".", ",") }}</span>
+        </div>
+        <div class="item-quantity">
+            <input type="button" class="quantity-btn" id="item-quantity-minus-btn" value="−">
+            <span class="quantity" id="quantity-number">1</span>
+            <input type="button" class="quantity-btn" id="item-quantity-plus-btn" value="+">
+        </div>
+        <div class="main-info">
+            <span class="item-title">{{ menu_item[0] }}</span>
+            <span class="item-info">
+                {{ menu_item[1].split(",")[0] }},<br>
+                {{ menu_item[1].split(",")[1] }}
+            </span>
+        </div>
+        <div class="secondary-info">
+            <span class="secondary-info-title">Ingredients</span>
+            <div class="ingredients">
+                <div class="ingredients-item">
+                    <img src="{{ url_for('static', filename='img/item/avocado.png') }}" alt="" class="ingredients-item-img">
+                </div>
+                <div class="ingredients-item">
+                    <img src="{{ url_for('static', filename='img/item/red_fish.png') }}" alt="" class="ingredients-item-img">
+                </div>
+                <div class="ingredients-item">
+                    <img src="{{ url_for('static', filename='img/item/gurken.png') }}" alt="" class="ingredients-item-img">
+                </div>
+                <div class="ingredients-item">
+                    <img src="{{ url_for('static', filename='img/item/rice.png') }}" alt="" class="ingredients-item-img">
+                </div>
+            </div>
+        </div>
+        <div class="item-price-container">
+            <div class="item-price">
+                <span class="item-price-title">Total price</span>
+                <span class="item-price-value">${{ menu_item[2]|string|replace(".", ",") }}</span>
+            </div>
+
+            <input type="button" class="add-item-btn" value="Add">
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/item_page.js') }}"></script>
+{% endblock %}

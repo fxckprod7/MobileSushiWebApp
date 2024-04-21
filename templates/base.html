@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if title %}
+            {{ title }}
+        {% else %}
+            Sushi App
+        {% endif %}
+    </title>
+
+    <link rel="icon" href="{{ url_for('static', filename='img/sushi-tab-logo.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+    {% block styles %}
+    {% endblock %}
+
+</head>
+<body>
+    <div class="content-container">
+        <div class="phone">
+            
+            <img id="iphone-15-pro" src="{{ url_for('static', filename='img/iphone15pro.png') }}" alt="">
+            
+            <div class="status-bar-box"></div>
+
+            {% if not status_bar %}
+                <img id="status-bar-black" src="{{ url_for('static', filename='img/statusbar_black.png') }}" alt="">
+            {% else %}
+                <img id="status-bar-black" src="{{ url_for('static', filename='img/statusbar_white.png') }}" alt="">
+            {% endif %}
+
+            <div class="navigation-menu">
+                <div class="navigation-menu-container">
+                    <a href="/home" class="navigation-menu-btn">
+                        <img class="navigation-menu-btn-img {% if navi_status=='home' %} active {% endif %}" src="{{ url_for('static', filename='img/home_btn_black.png') }}" alt="">
+                    </a>
+                    <a href="/menu" class="navigation-menu-btn">
+                        <img class="navigation-menu-btn-img {% if navi_status=='menu' %} active {% endif %}" src="{{ url_for('static', filename='img/menu_btn_black.png') }}" alt="">
+                    </a>
+                    <a href="/basket" class="navigation-menu-btn">
+                        <img class="navigation-menu-btn-img {% if navi_status=='basket' %} active {% endif %}" src="{{ url_for('static', filename='img/basket_btn_black.png') }}" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <img id="home-indicator-black" src="{{ url_for('static', filename='img/home_indicator_black.png') }}" alt="">
+        </div>
+
+        <div class="content">
+            
+            {% block content %}
+            {% endblock %}  
+            
+        </div>  
+    </div>
+
+    {% block scripts %}
+    {% endblock %}
+    
+</body>
+</html>

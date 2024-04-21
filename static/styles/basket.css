@@ -1,0 +1,325 @@
+.content{
+    overflow-y: hidden !important;
+}
+
+.container{
+    position: relative;
+
+    width: 353px;
+    height: 777px;
+
+    margin-top: 54px;
+    margin-bottom: 21px;
+
+}
+
+.checkout-container{
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 393px;
+    height: 376px;
+
+    border-radius: 40px;
+    z-index: 0;
+
+    filter: drop-shadow(2px 4px 7px rgba(0, 0, 0, 0.4));
+
+    background-color: white;
+}
+
+.card-list-title{
+    position: absolute;
+    display: block;
+
+    top: 0;
+    left: 0;
+
+    width: 95px;
+    height: 52px;
+
+    font-weight: 500;
+    color: black;
+}
+
+.card-list-title-small{
+    display: block;
+
+    font-size: 16px;
+
+    width: 100%;
+    height: auto;
+}
+
+.card-list-title-big{
+    position: absolute;
+    display: block;
+
+    bottom: 0;
+    left: 0;
+
+    margin-bottom: 5px;
+
+    font-size: 24px;
+}
+
+.basket-container{
+    position: relative;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 349px;
+
+    overflow-y: auto;
+
+    margin-top: 52px;
+    padding-top: 30px;
+
+    z-index: 0;
+
+}
+
+.basket-container::-webkit-scrollbar {
+    display: none;
+}
+
+.basket-item{
+    position: relative;
+
+    width: 100%;
+    height: 80px;
+    
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(0.25turn, #484848 20%, #727272);
+}
+
+.basket-item-img-container{
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 70px;
+    height: 60px;
+
+    margin: 10px 0px 10px 10px;
+
+    background-color: white;
+    border-radius: 10px;
+
+    filter: drop-shadow(2px 4px 7px rgba(0, 0, 0, 0.2));
+}
+
+.basket-item-img{
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+
+    margin: 0px 5px;
+
+    width: 60px;
+    height: 60px;
+}
+
+.basket-item-name{
+    position: absolute;
+    display: block;
+
+    top: 0;
+    left: 0;
+
+    margin-top: 15px;
+    margin-left: 95px;
+
+    font-size: 20px;
+    font-weight: 300;
+
+    color: white;
+}
+
+.basket-item-quantity{
+    position: absolute;
+    display: block;
+
+    bottom: 0;
+    left: 0;
+
+    margin-bottom: 22px;
+    margin-left: 95px;
+
+    font-size: 14px;
+    font-weight: 300;
+
+    color: white;
+}
+
+.basket-item-price-container{
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 0;
+    right: 0;
+
+    height: 100%;
+
+    z-index: 0;
+
+    margin-right: 10px;
+}
+
+.basket-item-price{
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+
+    color: white;
+}
+
+.delete-basket-item-btn{
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 0;
+    right: 0;
+
+    width: 16px;
+    height: 16px;
+
+    z-index: 1;
+
+    margin: 5px 5px 0px 0px;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background-color: #FF585D;
+
+    transition: 0.3s
+}
+
+.delete-basket-item-btn-img{
+    width: 8px;
+    height: 8px;
+}
+
+.delete-basket-item-btn:hover{
+    filter: drop-shadow(2px 4px 7px rgba(0, 0, 0, 0.3));
+}
+
+.item-container{
+    position: absolute;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    top: 0;
+    left: 0;
+
+    width: 333px;
+    height: 29px;
+}
+
+.subtotal{
+    margin: 37px 30px 0px 30px;
+}
+
+.subtotal-title{
+    font-size: 17px;
+    font-weight: 300;
+
+    color: #606060;
+}
+
+.subtotal-value{
+    font-size: 17px;
+
+}
+
+.discount{
+    margin: 71px 30px 0px 30px;
+}
+
+.checkout-line{
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+
+    width: 333px;
+    height: 1px;
+
+    margin: 120px 30px 0px 30px;
+}
+
+.total{
+    margin: 141px 30px 0px 30px;
+}
+
+.checkout-pay-btn{
+    position: absolute;
+    box-sizing: border-box;
+
+    bottom: 0;
+    left: 0;
+
+    width: 210px;
+    height: 50px;
+
+    background-color: #FF585D;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+    color: white;
+    text-align: center;
+
+    margin: 0px 91px 115px 91px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.checkout-pay-btn:hover{
+    filter: drop-shadow(2px 4px 7px rgba(0, 0, 0, 0.2));
+    
+    background-color: white;
+    color: #FF585D;
+    border: 1px solid #FF585D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

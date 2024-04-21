@@ -1,0 +1,83 @@
+{% extends "base.html" %} 
+
+{% block styles %}
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='styles/menu.css') }}"
+    />
+{% endblock %} 
+
+{% block content %}
+    <div class="container">
+        <div class="top-side-container">
+            <span class="top-side-title">Get Your <span id="title-bold">Best</span> <br>Asian <span id="title-bold">Food</span> here</span>
+        
+            <div class="top-side-categories">
+                <input class="top-side-category selected" type="button" value="Sushi">
+                <input class="top-side-category" type="button" value="Salads">
+                <input class="top-side-category" type="button" value="Drinks">
+            </div>
+
+        </div>
+
+        <div class="menu-container">
+
+            <div class="menu-column">
+                {% for i in range(0, menu_items|length, 2) %}
+                    {% set item_image_url = "img/" + menu_items[i][4] + ".png" %}
+                    <div class="menu-item-left-container">
+                        <a class="menu-item-link" href="menu/{{ menu_items[i][6] }}">
+                            <div class="menu-item">
+                                <img class="menu-item-img" src="{{ url_for('static', filename=item_image_url) }}" alt="">
+                                <div class="menu-item-info">
+                                    <span class="menu-item-title">{{ menu_items[i][0] }}</span>
+                                    <div class="menu-item-secondary-info">
+                                        <span class="menu-item-quantity">{{ menu_items[i][5] }} pieces</span>
+                                        <div class="menu-item-rating">
+                                            <img src="{{ url_for('static', filename='img/star.png') }}" alt="" class="menu-item-star">
+                                            <span class="menu-item-rating-number">{{ menu_items[i][3] }}</span>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="menu-item-price-container">
+                                    <div class="menu-item-price">${{ menu_items[i][2] }}</div>
+                                    <input class="menu-item-add-btn" type="button" value="+">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <div class="menu-column">
+                {% for i in range(1, menu_items|length, 2) %}
+                    {% set item_image_url = "img/" + menu_items[i][4] + ".png" %}
+                    <div class="menu-item-right-container">
+                        <a class="menu-item-link" href="menu/{{ menu_items[i][6] }}">
+                            <div class="menu-item">
+                                <img class="menu-item-img" src="{{ url_for('static', filename=item_image_url) }}" alt="">
+                                <div class="menu-item-info">
+                                    <span class="menu-item-title">{{ menu_items[i][0] }}</span>
+                                    <div class="menu-item-secondary-info">
+                                        <span class="menu-item-quantity">{{ menu_items[i][5] }} pieces</span>
+                                        <div class="menu-item-rating">
+                                            <img src="{{ url_for('static', filename='img/star.png') }}" alt="" class="menu-item-star">
+                                            <span class="menu-item-rating-number">{{ menu_items[i][3] }}</span>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="menu-item-price-container">
+                                    <div class="menu-item-price">${{ menu_items[i][2] }}</div>
+                                    <input class="menu-item-add-btn" type="button" value="+">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+
+            </div>
+            
+        </div>
+
+    </div>
+{% endblock %}

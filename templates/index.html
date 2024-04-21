@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block styles %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='styles/index.css') }}"
+/>
+{% endblock %} {% block content %}
+<img
+  id="logo"
+  src="{{ url_for('static', filename='img/logo_index.png') }}"
+  alt=""
+/>
+<div class="container">
+  <div class="deals">
+    <span id="deals-title">Special Deals</span>
+    <div class="deal-items">
+      <a href="/menu/hosomaki_roll" id="deal-item">
+        <img
+          id="deal-img"
+          src="{{ url_for('static', filename='img/hosomaki_roll.png') }}"
+          alt=""
+        />
+        <span id="deal-item-title">Hosomaki Roll</span>
+        <span id="deal-item-price">$19.98 (4 pieces)</span>
+      </a>
+
+      <a href="/menu/salmon_sake" id="deal-item">
+        <img
+          id="deal-img"
+          src="{{ url_for('static', filename='img/salmon.png') }}"
+          alt=""
+        />
+        <span id="deal-item-title">Salmon (sake)</span>
+        <span id="deal-item-price">$17.98 (5 pieces)</span>
+      </a>
+    </div>
+    <div id="deals-menu-btn-cover">
+      <a id="deals-menu-btn" href="/menu"><span id="btn-text">Menu</span></a>
+    </div>
+  </div>
+</div>
+{% endblock %}

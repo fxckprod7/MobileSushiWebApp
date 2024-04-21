@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/basket.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <span class="card-list-title"><span class="card-list-title-small">My</span><span class="card-list-title-big"> Cart List</span></span>
+        <div class="basket-container">
+
+            {% for item in menu_items %}
+                {% set item_image_url = "img/basket/" + item[4] + ".png" %}
+                <div class="basket-item">
+                    <div class="basket-item-img-container">
+                        <img src="{{ url_for('static', filename=item_image_url) }}" alt="" class="basket-item-img">
+                    </div>
+                    <span class="basket-item-name">{{ item[0] }}</span>
+                    <span class="basket-item-quantity">{{ item[5] }} pieces</span>
+                    <button class="delete-basket-item-btn" type="submit">
+                        <img class="delete-basket-item-btn-img" src="{{ url_for('static', filename='img/basket/cross.png') }}" alt="">
+                    </button>
+                    <div class="basket-item-price-container"><span class="basket-item-price">${{ item[2] }}</span></div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="checkout-container">
+        <div class="item-container subtotal">
+            <span class="subtotal-title">Subtotal</span>
+            <span class="subtotal-value" id="subtotal-value">$0</span>
+        </div>
+        <div class="item-container discount">
+            <span class="subtotal-title">Discount</span>
+            <span class="subtotal-value" id="discount-value">$5</span>
+        </div>
+
+        <img src="{{ url_for('static', filename='img/basket/basket_line.png') }}" class="checkout-line"></img>
+
+        <div class="item-container total">
+            <span class="subtotal-title">Total</span>
+            <span class="subtotal-value" id="total-value">$19.98</span>
+        </div>
+
+        <input type="button" class="checkout-pay-btn" value="Pay">
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/basket.js') }}"></script>
+{% endblock %}
