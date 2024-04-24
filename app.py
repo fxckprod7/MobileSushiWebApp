@@ -5,7 +5,7 @@ from flask import Flask, render_template, redirect, url_for
 from db.db_manager import Database
 
 app = Flask(__name__)
-db = Database(["db", "database.db"])
+db = Database(["MobileSushiWebApp" ,"db", "database.db"])
 
 @app.route('/')
 @app.route('/home')
