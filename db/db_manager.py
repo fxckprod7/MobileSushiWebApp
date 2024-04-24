@@ -16,7 +16,6 @@ class Database:
             cursor = await db.execute("SELECT * FROM menu")
             result = await cursor.fetchall()
 
-            await db.close()
             return result
         
     async def menu_item(self, name: str) -> list:
