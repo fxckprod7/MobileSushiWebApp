@@ -32,4 +32,4 @@ async def basket():
     return render_template("basket.html", title="Sushi App | Basket", navi_status="basket", menu_items=menu_items)
 
 if __name__ == '__main__':
-    app.run(port="7777", debug=True)
+    app.run(port="7777", debug=False)
