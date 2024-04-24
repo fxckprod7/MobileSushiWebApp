@@ -30,7 +30,7 @@ class Database:
 async def main():
     db = Database(["database.db"])
     await db.connection_check()
-    print(await db.menu_item("hosomaki_roll"))
+    print(await db.menu_items())
     
 if __name__ == "__main__":
     asyncio.run(main())
