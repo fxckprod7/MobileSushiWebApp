@@ -12,11 +12,12 @@ class Database:
             print("[INFO] Connection check successful")
     
     async def menu_items(self) -> list:
-        async with aiosqlite.connect(self.path) as db:
-            cursor = await db.execute("SELECT * FROM menu")
-            result = await cursor.fetchall()
+        db = await aiosqlite.connect(self.path)
+        
+        cursor = await db.execute("SELECT * FROM menu")
+        result = await cursor.fetchall()
 
-            return result
+        return result
         
     async def menu_item(self, name: str) -> list:
         async with aiosqlite.connect(self.path) as db:
